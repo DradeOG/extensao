@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Brigadeiros Valente - Um Mundo Mais Doce">
+    <meta property="og:description" content="Doces artesanais feitos com muito amor. Venha conhecer nosso espaço instagramável e fazer o seu pedido!">
+    <meta property="og:image" content="logo.jpeg.jpeg"> 
+    <meta property="og:type" content="website">
     <title>Brigadeiros Valente | Confeitaria Artesanal</title>
-    
+
+    <link rel="icon" type="image/jpeg" href="logo.jpeg.jpegs">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@400;500;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   
 
     <header class="cabecalho">
         <div class="logo">
@@ -26,7 +32,7 @@
                 <li><a href="#valores">Valores</a></li>
                 <li><a href="#espaco">Nosso Espaço</a></li>
                 <nav class="menu">
-                <li><a href="https://deliveryapp.neemo.com.br/delivery/13802" target="_blank" class="btn-loja">Fazer Pedido</a></li>
+              <li><a href="https://deliveryapp.neemo.com.br/delivery/13802" target="_blank" class="btn-loja btn-pedido-confete">Fazer Pedido</a></li>
     </ul>
     </ul>
 </nav>
@@ -35,7 +41,7 @@
     </header>
 
    <main>
-        <section id="home" class="hero">
+        <section id="home" class="hero animar-scroll">
             <div class="overlay-hero"></div> 
             
             <div class="conteudo-hero">
@@ -45,14 +51,13 @@
                <div class="botoes-hero">
     <a href="#vitrine" class="btn-primario">Ver Cardápio</a>
     
-    <a href="https://deliveryapp.neemo.com.br/delivery/13802" target="_blank" class="btn-secundario">Fazer Pedido</a>
-</div>
+    <a href="https://deliveryapp.neemo.com.br/delivery/13802" target="_blank" class="btn-secundario btn-pedido-confete">Fazer Pedido</a>
             </div>
         </section>
     </main>
 
 
-    <section id="sobre" class="secao-historia">
+    <section id="sobre" class="secao-historia animar-scroll">
         
         <div class="decoracao coracao1">💖</div>
         <div class="decoracao estrela1">✨</div>
@@ -86,7 +91,7 @@
         </div>
     </section>
 
-    <section id="espaco" class="secao-espaco">
+    <section id="espaco" class="secao-espaco animar-scroll">
         <div class="elemento-fofo el-1">🌸</div>
         <div class="elemento-fofo el-2">☕</div>
 
@@ -111,6 +116,42 @@
                <img src="foto2.jpeg" alt="Nossa Cerejeira" class="foto-slide">
                <img src="foto3.jpeg" alt="Detalhes da Loja" class="foto-slide">
            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="secao-depoimentos animar-scroll">
+        <div class="container-depoimentos">
+            <span class="subtitulo-meigo" style="text-align: center; display: block;">Quem já provou, amou!</span>
+            <h2 class="titulo-secao" style="text-align: center; margin-bottom: 50px;">Recadinhos Doces</h2>
+            
+            <div class="grid-depoimentos">
+                <div class="card-depoimento">
+                    <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                    <p>"O brigadeiro de colher é simplesmente divino! O ambiente é o mais fofo que já vi, a árvore de cerejeira rende fotos perfeitas."</p>
+                    <div class="autor-depoimento">
+                        <strong>Mariana Silva</strong>
+                        <span>Cliente Fiel</span>
+                    </div>
+                </div>
+
+                <div class="card-depoimento">
+                    <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                    <p>"Atendimento impecável e os doces têm um equilíbrio perfeito no açúcar. O site é lindo e fazer o pedido pelo link foi super rápido!"</p>
+                    <div class="autor-depoimento">
+                        <strong>Carlos Eduardo</strong>
+                        <span>Amante de Doces</span>
+                    </div>
+                </div>
+
+                <div class="card-depoimento">
+                    <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                    <p>"Ir na loja física é uma experiência mágica, tudo muito meigo. Levei uma caixinha de presentes e todo mundo em casa pirou."</p>
+                    <div class="autor-depoimento">
+                        <strong>Ana Beatriz</strong>
+                        <span>Instablogger</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -144,7 +185,7 @@
 
     </div>
 </section>
-<section id="vitrine" class="secao-mundo-valente">
+<section id="vitrine" class="secao-mundo-valente animar-scroll">
         
         <div class="cabecalho-vitrine">
             <h2 class="titulo-secao">Nosso Cardápio</h2>
@@ -209,7 +250,7 @@
         </div>
 
     </section>
-    <section id="equipe" class="secao-equipe">
+    <section id="equipe" class="secao-equipe animar-scroll">
         <h2 class="titulo-secao">Nossa Equipe</h2>
         
         <div class="grade-equipe">
@@ -273,12 +314,17 @@
 
             <div class="card-membro">
                 <img src="sthe.jpeg" alt="Foto do Aluno 1" class="foto-membro">
-                <h3>Nome do Aluno 9</h3>
+                <h3>Sthefany Dokko</h3>
                 <p>Função / Cargo</p>
                 <a href="#" class="icone-social">📷</a>
             </div>
 
-     
+             <div class="card-membro">
+                <img src="drade.png" alt="Foto do Aluno 1" class="foto-membro">
+                <h3>Wallace Andrade</h3>
+                <p>Função / Cargo</p>
+                <a href="https://www.instagram.com/og.drade/" class="icone-social">📷</a>
+            </div>
 
         </div>
     </section>
@@ -304,7 +350,23 @@
         }, 5000); // 5000 = 5 segundos
     </script>
 
-<footer class="rodape">
+   <div class="mascote-panda" id="nosso-panda">
+        <span class="balao-fala" id="fala-panda">Oii! 🐾</span>
+        
+        <div class="virar-imagem">
+            <img src="panda gif.gif" alt="Panda Mascote" class="panda-corpo" id="img-panda">
+        </div>
+    </div>
+
+
+    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20fazer%20uma%20encomenda%20com%20a%20Brigadeiros%20Valente." target="_blank" class="btn-whatsapp" title="Fale com a gente no WhatsApp!">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+        </svg>
+
+    </a>
+       <footer class="rodape">
         <div class="container-rodape">
             
             <div class="coluna-rodape">
@@ -345,6 +407,91 @@
         </div>
     </footer>
     </script>
+
+    <script>
+        const panda = document.getElementById('nosso-panda');
+        const balaoFala = document.getElementById('fala-panda');
+        
+        // Uma lista de frases divertidas para o panda dizer
+        const frasesPanda = [
+            "Tem brigadeiro aí? 🍫",
+            "Você é incrível! ✨",
+            "Amo nossa árvore! 🌸",
+            "Clica lá em Fazer Pedido! 🎁",
+            "Me dá um doce? 🥺",
+            "Nosso espaço é lindo, né? 📸",
+            "Trabalho nota 10! 🎓"
+        ];
+
+        panda.addEventListener('click', () => {
+            // Escolhe uma frase aleatória da nossa lista
+            const fraseAleatoria = frasesPanda[Math.floor(Math.random() * frasesPanda.length)];
+            
+            // Muda o texto do balão
+            balaoFala.innerText = fraseAleatoria;
+            
+            // Faz o balão aparecer
+            balaoFala.style.opacity = '1';
+            balaoFala.style.transform = 'translateY(0)';
+
+            // Depois de 3.5 segundos, o balão some sozinho
+            setTimeout(() => {
+                balaoFala.style.opacity = '0';
+                balaoFala.style.transform = 'translateY(10px)';
+            }, 3500);
+        });
+    </script>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <script>
+        // Cria o "observador" que fica olhando se a seção apareceu na tela
+        const observador = new IntersectionObserver((entradas) => {
+            entradas.forEach((entrada) => {
+                // Se a seção estiver visível na tela do usuário...
+                if (entrada.isIntersecting) {
+                    entrada.target.classList.add('visivel'); // Adiciona a classe que faz surgir
+                }
+            });
+        }, {
+            threshold: 0.15 // Ativa quando 15% da seção aparecer na tela
+        });
+
+        // Seleciona todos os elementos que têm a classe de animar e joga pro observador
+        const elementosParaAnimar = document.querySelectorAll('.animar-scroll');
+        elementosParaAnimar.forEach((elemento) => observador.observe(elemento));
+    </script>
+    <script>
+        // Seleciona todos os botões que têm a classe 'btn-pedido-confete'
+        const botoesDePedido = document.querySelectorAll('.btn-pedido-confete');
+
+        // Para cada botão encontrado, adiciona a ação do clique
+        botoesDePedido.forEach(botao => {
+            botao.addEventListener('click', function(evento) {
+                
+                // Dispara a chuva de confetes!
+                confetti({
+                    particleCount: 150, // Quantidade de confetes
+                    spread: 90, // O quão espalhado vai ser a explosão
+                    origin: { y: 0.6 }, // Posição (0.6 é um pouco abaixo do meio da tela)
+                    colors: ['#FF6B8B', '#FCE4EC', '#5D4037', '#FFFFFF'], // As cores exatas da Brigadeiros Valente!
+                    zIndex: 99999 // Garante que o confete apareça por cima de tudo
+                });
+
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 </body>
 </html>
 </body>
