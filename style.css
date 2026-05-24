@@ -24,6 +24,8 @@ body {
     font-family: var(--fonte-textos);
 }
 
+
+
 /* --- CABEÇALHO E MENU --- */
 /* --- CABEÇALHO E MENU (NAVBAR) --- */
 /* --- CABEÇALHO E MENU (NAVBAR) --- */
@@ -1184,4 +1186,230 @@ html {
     .titulo-secao, .titulo-secao-historia {
         font-size: 30px;
     }
+}
+
+/* ========================================= */
+/* --- MASCOTE INTERATIVO (PANDA) --- */
+/* ========================================= */
+
+.mascote-panda {
+    position: fixed;
+    bottom: 20px; /* Subi um pouco para não esconder atrás da barra do navegador */
+    left: -150px; /* Começa escondido do lado esquerdo */
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    /* Reduzi para 20s para ele aparecer mais rápido na tela */
+    animation: andarPanda 20s linear infinite; 
+}
+
+/* Div que cuida apenas de espelhar o panda para ele não andar de costas */
+.virar-imagem {
+    display: flex;
+    animation: espelharPanda 20s linear infinite; /* Tem que ter o mesmo tempo de cima (20s) */
+}
+
+/* Pausa tudo quando passa o mouse */
+.mascote-panda:hover,
+.mascote-panda:hover .virar-imagem {
+    animation-play-state: paused; 
+}
+
+/* O corpo do panda */
+.panda-corpo {
+    width: 100px; /* Garante que ele tenha um tamanho visível */
+    height: auto;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.3));
+}
+
+.mascote-panda:hover .panda-corpo {
+    transform: translateY(-15px) scale(1.1); /* Pulinho fofo */
+}
+
+/* O Balão de Fala */
+.balao-fala {
+    background-color: var(--cor-rosa-cerejeira);
+    color: white;
+    font-family: var(--fonte-titulos);
+    font-size: 16px;
+    padding: 8px 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    opacity: 0; /* Começa invisível */
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    position: relative;
+    white-space: nowrap; /* Não deixa o texto quebrar de linha de forma feia */
+}
+
+.balao-fala::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px 6px 0;
+    border-style: solid;
+    border-color: var(--cor-rosa-cerejeira) transparent transparent transparent;
+}
+
+/* --- AS ANIMAÇÕES --- */
+
+/* 1. Movimenta o panda de um lado pro outro */
+@keyframes andarPanda {
+    0% { left: -150px; }
+    49% { left: 105vw; }
+    50% { left: 105vw; }
+    99% { left: -150px; }
+    100% { left: -150px; }
+}
+
+/* 2. Espelha a imagem quando ele vira */
+@keyframes espelharPanda {
+    0%, 49.9% { transform: scaleX(1); }    /* Direita */
+    50%, 99.9% { transform: scaleX(-1); }  /* Esquerda */
+    100% { transform: scaleX(1); }
+}
+
+/* Esconde o panda no celular para não atrapalhar a tela pequena */
+@media (max-width: 768px) {
+    .mascote-panda {
+        display: none !important;
+    }
+}
+
+/* ========================================= */
+/* --- BOTÃO FLUTUANTE DO WHATSAPP --- */
+/* ========================================= */
+
+.btn-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366; /* Verde oficial do WhatsApp */
+    color: #FFF;
+    font-size: 35px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999; /* Garante que fique por cima de todas as imagens e textos */
+    transition: all 0.3s ease;
+    animation: pulsarZap 2s infinite; /* Chama a animação de pulso */
+}
+
+/* Efeito ao passar o mouse por cima */
+.btn-whatsapp:hover {
+    background-color: #128c7e; /* Fica um verde mais escuro */
+    transform: scale(1.1); /* Dá uma leve crescida */
+    animation: none; /* Para de pulsar quando o mouse está em cima */
+}
+
+/* A mágica do efeito de pulso */
+@keyframes pulsarZap {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); /* O anel expande e some */
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* Ajuste para que ele fique do tamanho perfeito na tela do celular */
+@media (max-width: 768px) {
+    .btn-whatsapp {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+    }
+}
+
+/* ========================================= */
+/* --- SEÇÃO DE DEPOIMENTOS --- */
+/* ========================================= */
+.secao-depoimentos {
+    padding: 100px 50px;
+    background-color: var(--cor-fundo-claro);
+}
+
+.container-depoimentos {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-depoimentos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card-depoimento {
+    background-color: #FFF;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-bottom: 5px solid var(--cor-rosa-pastel);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-depoimento:hover {
+    transform: translateY(-10px);
+    border-bottom-color: var(--cor-rosa-cerejeira);
+}
+
+.estrelas {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.card-depoimento p {
+    font-size: 16px;
+    color: var(--cor-texto-marrom);
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.autor-depoimento strong {
+    display: block;
+    color: var(--cor-texto-marrom);
+    font-size: 18px;
+}
+
+.autor-depoimento span {
+    font-size: 14px;
+    color: var(--cor-rosa-cerejeira);
+    font-weight: 600;
+}
+
+/* ========================================= */
+/* --- CLASSES PARA ANIMAÇÃO DE SCROLL --- */
+/* ========================================= */
+/* O elemento começa invisível e 50px mais para baixo */
+.animar-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Classe que o JavaScript vai injetar quando o usuário rolar a página */
+.animar-scroll.visivel {
+    opacity: 1;
+    transform: translateY(0);
 }
