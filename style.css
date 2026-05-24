@@ -181,15 +181,23 @@ body {
     border-bottom: 4px solid var(--cor-rosa-cerejeira);
 }
 
-/* Espaço provisório para a foto */
-.foto-placeholder {
+/* --- FOTOS REAIS DA EQUIPE --- */
+.foto-membro {
     width: 90px;
     height: 90px;
-    border-radius: 50%;
-    background-color: var(--cor-rosa-pastel);
+    border-radius: 50%; /* Deixa a foto perfeitamente redonda */
+    object-fit: cover; /* Impede que o rosto da pessoa fique esticado/amassado */
+    
+    /* Mantém a borda dupla elegante que fizemos antes */
     border: 3px solid #fff;
-    box-shadow: 0 0 0 3px var(--cor-rosa-cerejeira); /* Cria uma borda dupla elegante */
+    box-shadow: 0 0 0 3px var(--cor-rosa-cerejeira);
     margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Charme extra: a foto dá um leve zoom quando passamos o mouse no card */
+.card-membro:hover .foto-membro {
+    transform: scale(1.1);
 }
 
 /* Textos do Card */
@@ -945,4 +953,235 @@ html {
 @keyframes bounce {
     0%, 100% { transform: translateX(0); }
     50% { transform: translateX(10px); }
+}
+
+/* --- RODAPÉ (FOOTER) --- */
+.rodape {
+    background-color: var(--cor-rosa-pastel);
+    padding: 60px 50px 20px 50px;
+    color: var(--cor-texto-marrom);
+    border-top: 5px solid var(--cor-rosa-cerejeira); /* Uma linha charmosa separando o site do rodapé */
+}
+
+.container-rodape {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    /* Essa linha mágica faz as colunas se ajustarem sozinhas no celular */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.coluna-rodape h3 {
+    font-family: var(--fonte-titulos);
+    color: var(--cor-rosa-cerejeira);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.coluna-rodape p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.logo-rodape {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-bottom: 15px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Botões de Redes Sociais */
+.redes-sociais {
+    display: flex;
+    gap: 15px;
+}
+
+.icone-rede {
+    background-color: #fff;
+    color: var(--cor-rosa-cerejeira);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.icone-rede:hover {
+    background-color: var(--cor-rosa-cerejeira);
+    color: #fff;
+    transform: translateY(-5px) scale(1.1); /* Pula e cresce um pouquinho */
+}
+
+/* Estilo dos Links e Contatos */
+.coluna-rodape ul {
+    list-style: none;
+    padding: 0;
+}
+
+.coluna-rodape ul li {
+    margin-bottom: 15px;
+}
+
+.coluna-rodape ul a {
+    text-decoration: none;
+    color: var(--cor-texto-marrom);
+    font-weight: 500;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    display: inline-block;
+}
+
+/* Efeito super chique: o link "anda" pro lado ao passar o mouse */
+.coluna-rodape ul a:hover {
+    color: var(--cor-rosa-cerejeira);
+    padding-left: 8px; 
+}
+
+.lista-contato li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Direitos Autorais */
+.rodape-direitos {
+    text-align: center;
+    padding-top: 25px;
+    border-top: 2px dashed rgba(93, 64, 55, 0.15); /* Linha tracejada suave */
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--cor-texto-marrom);
+}
+
+/* ========================================= */
+/* --- OTIMIZAÇÃO MOBILE E RESPONSIVIDADE --- */
+/* ========================================= */
+
+/* Telas médias (Tablets e Celulares deitados - até 992px) */
+@media (max-width: 992px) {
+    /* Transforma os blocos lado a lado em uma coluna só */
+    .container-historia, 
+    .container-espaco {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    /* Centraliza os textos que antes ficavam na esquerda */
+    .texto-historia, 
+    .texto-espaco, 
+    .lista-crescimento {
+        text-align: center;
+        align-items: center;
+    }
+
+    /* O menu se adapta para caber na tela */
+    .cabecalho-update, 
+    header {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .menu ul, 
+    .menu-update ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+/* Telas pequenas (Celulares em pé - até 768px) */
+@media (max-width: 768px) {
+    
+    /* Diminui os espaços em branco laterais de todas as seções */
+    .hero, .secao-historia, .secao-institucional, 
+    .secao-mundo-valente, .secao-espaco, .rodape {
+        padding: 50px 20px;
+    }
+
+    /* --- BANNER PRINCIPAL (HERO) --- */
+    .hero h1 {
+        font-size: 40px; /* Título menor para não vazar da tela */
+    }
+    
+    .detalhe-cursivo {
+        font-size: 32px;
+    }
+
+    .overlay-hero {
+        width: 95%; /* Ao invés de um tamanho fixo, ocupa quase a tela toda */
+        height: auto;
+        padding: 40px 20px;
+        border-radius: 20px; /* Tira o formato orgânico complexo para focar na leitura no mobile */
+        animation: none; /* Desativa a animação pesada no celular para economizar bateria */
+    }
+
+    .botoes-hero {
+        flex-direction: column; /* Coloca os botões um embaixo do outro */
+        gap: 15px;
+    }
+
+    /* --- MISSÃO, VISÃO E VALORES --- */
+    .container-mvv {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-mvv, .card-mvv.destaque {
+        width: 100%;
+        max-width: 350px;
+        transform: scale(1); /* Tira o destaque de tamanho no mobile para não quebrar a tela */
+    }
+
+    .card-mvv:hover {
+        transform: translateY(-10px); /* Animação mais suave no toque do celular */
+    }
+
+    /* --- NOSSO ESPAÇO --- */
+    .moldura-carrossel {
+        height: 300px; /* Deixa o carrossel de fotos um pouco menor */
+    }
+
+    .icones-espaco {
+        flex-direction: column; /* Ícones fofos um embaixo do outro */
+        align-items: center;
+    }
+
+    /* --- A EXPERIÊNCIA VALENTE (Diferenciais) --- */
+    .lista-servicos {
+        grid-template-columns: 1fr; /* 1 coluna só */
+    }
+
+    .flutuante {
+        display: none; /* Esconde as decorações grandes no celular para não poluir */
+    }
+}
+
+/* Telas muito pequenas (Celulares antigos - até 480px) */
+@media (max-width: 480px) {
+    .foto-fundadores {
+        width: 100%;
+        height: auto;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .titulo-secao, .titulo-secao-historia {
+        font-size: 30px;
+    }
 }
